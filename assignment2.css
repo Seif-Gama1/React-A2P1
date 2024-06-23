@@ -1,0 +1,392 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: "Alegreya", serif;
+    font-optical-sizing: auto;
+}
+
+
+/*************************** Navigation Bar ***************************/
+.navbar{
+    width: 100%;
+    height: 16vh;
+    z-index: 10;
+    position:fixed;
+    display:flex;
+
+    gap: 2%;
+    align-items:center;
+
+    background-image: url("images/navbar1.png");
+    background-size: 25% 40%;
+    background-repeat:no-repeat;
+    background-position: 5% center;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+}
+.navbar a{
+    text-decoration: none;
+    color:black;
+}
+.navbar a:first-child{
+    margin-left: 32%; 
+}
+
+a:hover{
+    color:#8f754f;
+}
+/*************************** Side Menu ***************************/
+.settings{
+    top: 30%;
+    right: 0px;
+    z-index: 10;
+    position:fixed;
+    padding: 1% 0 1% 0.5%;
+    width: 3.5%;
+    height: 10%;
+    min-height:20px;
+    min-width:30px;
+    border-radius: 10%;
+    background-color: #6c4c40;
+}
+.settings img{
+    width:80%;
+    min-width:30px;
+    cursor: pointer;
+}
+
+/*************************** Welcome To ***************************/
+
+.gallery1{
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/drew-coffman-1872.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+}
+.gallery1 h1{
+    color: #6c4c40;
+    font-weight: 700;
+    font-size: calc(1.3rem + 4.5vw);
+}
+.gallery1 h2{ padding-top:24vh;  color:gray;     font-weight: 500;    }
+.gallery1 p{  font-size:24px;  color:gray;     font-weight: 500;   }
+
+.gallery1 Button{
+    justify-content: center;
+    margin-top: 1%;
+    cursor: pointer;
+    border:none;
+    border-radius: 10px;
+    padding: 15px 32px;
+ }
+
+
+ /*************************** Who We Are***************************/
+.gallery2{
+    display: flex; 
+    padding: 5% 0% 4% 4%;    /* top,right , bottom,left */
+    width: 90%;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items: center;
+}
+.gallery2 div {
+    width: 100%; /* Each div takes 50% of the container */
+}
+
+.gallery2 img {
+    width: 100%; /* Image takes full width of its container */
+}
+
+.item-gallery2 {
+    line-height: 2;
+}
+
+.item-gallery2 h2 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.item-gallery2 p{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #846f61;
+}
+.symbol{
+    font-size:30px;
+}
+
+
+
+/*************************** Our Location ***************************/
+.gallery3{
+    width: 100%;
+    display: flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content: center;
+    background-color: #f8f9fb;
+}
+
+.gallery3 div {
+    width: 100%; 
+}
+
+.gallery3 div img {
+    width: 98%; 
+    padding: 6% 0 6% 0;  
+}
+.item-gallery3 {
+    width:45%;
+    padding: 7.5% 0px 0px 9px; /* Adjust padding as needed */
+}
+
+.item-gallery3 h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.gallery3 p{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #846f61;
+}
+
+
+/*************************** Our Baking ***************************/
+.gallery4{ 
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* gap:20px; */
+    padding: 6% 0 6% 0;
+}
+.gallery4 h2{
+    width:100%;
+    font-weight: 500;
+    font-size: 38px;
+    color:#31302f;
+}
+
+.item-gallery4 { 
+    width: 100%;
+}
+.item-gallery4 img{
+    width: 90%;
+}
+.item-gallery4 h3{
+    font-size: 24px;
+    font-weight: 500;    /* by default: 400 , values 100~900 + some specific */
+    color:#67656e;
+}
+.item-gallery4 p{
+    font-size: 16px;
+    line-height: 1.3; /* changes spaces between lines */
+    color:#816f63;
+    padding-bottom:5%;
+}
+
+
+
+/*************************** Contact Information ***************************/
+.gallery5{
+    display: flex;
+    width: 100%;
+    background-color: #f8f9fb;
+    padding: 5% 0 5% 0%;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+.gallery5 div {
+    width: 100%; /* Each div takes 50% of the container */
+}
+
+.gallery5 img {
+    width: 100%;
+    padding: 6% 0 6% 0;
+}
+
+.item-gallery5 {
+    line-height: 2; 
+}
+
+.item-gallery5 h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.item-gallery5 p{
+    font-size: 15px;
+    color: #846f61;
+}
+.contact-info-p{
+    padding-left:5%;
+    line-height: 3; 
+}
+
+
+
+/*************************** Details ***************************/
+.parentgallery6{
+    width: 100%;
+    background-color: #403d38;
+    padding: 4% 0% 4% 0%;        /* top, right , bottom,left */
+}
+.gallery6{
+    width: 100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding-left: 0 4% 0 4%;
+    justify-content: center;
+}
+.gallery6 div {
+    width: 100%; 
+}
+.gallery6 div h3{
+    color:white;
+    font-size: 24px;
+    text-align:center;
+}
+
+.gallery6 div p{
+    color:#9f9e9c;
+    font-size: 15px;
+}
+
+.gallery6 div ul{
+    list-style-type: none;
+    padding: 0;
+}
+.gallery6 div ul li {
+    color: #9f9e9c;
+    padding: 20px 0 20px 20px;
+    border-bottom: 2px solid #9f9e9c; /* Underline style */
+}
+.gallery6 a{
+    color:#9f9e9c;
+}
+.g6p2{
+    text-align:center;
+}
+
+/*************************** Footer ***************************/ 
+.gallery7{
+    padding: 4% 0% 4% 0%; /*top, right , bottom,left*/
+    width: 100%;
+    background-color: #34332f;
+    text-align: center;
+}
+
+.gallery7 img {
+    width: 25%; 
+    padding-bottom: 3%;
+}
+
+.gallery7 p{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #626160; 
+}
+.gallery7 button{
+    margin-top:1%;
+    background-color:#8e744f; 
+    border:none;
+    color: white;
+    opacity: 0.7;
+    padding: 14px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width:576px){
+    .navbar{
+        background-size: 18% 40%;
+        background-position: 4% center;
+    }
+    .navbar a:first-child{
+        margin-left: 47%;
+    }
+
+    .settings{
+        height: 10%;
+    }
+
+
+    /*************************** Who We Are***************************/
+    .gallery2{
+        flex-wrap:nowrap;
+    }
+    .gallery2 div {
+        width: 50%; 
+    }
+
+    /*************************** Our Location ***************************/
+    .gallery3 div {
+        width: 45%; /* Each div takes 50% of the container */
+    }
+
+    .gallery3 div img {
+        width: 98%; /* Image takes full width of its container */
+        padding: 6% 0 6% 0;  
+    }
+    .item-gallery3 {
+        width:45%;
+    }
+
+
+
+    /*************************** Our Baking ***************************/
+    .item-gallery4 { 
+        width: 31.5%;
+    }
+    .item-gallery4 img{
+        width: 90%;
+    }
+
+
+    /*************************** Contact Information ***************************/
+    .gallery5{
+        flex-wrap:nowrap;
+    }
+    .gallery5 div {
+        width: 46.4%; /* Each div takes 50% of the container */
+    }
+
+    /*************************** Details ***************************/
+    .gallery6{
+        flex-wrap:nowrap;
+    }
+    .gallery6 div {
+        width: 22%; 
+    }
+    .gallery6 div h3 {
+        text-align:unset;
+    }
+    .g6p2{
+        text-align: unset;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .navbar{
+        background-size: 18% 40%;
+        background-position: 4% center;
+    }
+    .navbar a:first-child{
+        margin-left: 70%;
+    }
+  }
