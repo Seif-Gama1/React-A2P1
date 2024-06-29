@@ -79,6 +79,7 @@ a:hover{
     height: 100vh;
     background-image: url("images/drew-coffman-1872.jpg");
     background-size: 100% 100%;
+    background-size: cover;
     text-align: center;
 }
 .gallery1 h1{
@@ -141,7 +142,6 @@ a:hover{
     animation-duration:2s;
     animation-iteration-count:infinite;
     animation-timing-function: linear;
-    
   }
   
   @keyframes animate-to-bottom{
@@ -191,8 +191,14 @@ a:hover{
     line-height: 1.5;
     color: #846f61;
 }
-.symbol{
-    font-size:30px;
+.gallery2-icon{
+    display:flex;
+    gap:15px;
+    margin:2% 0 2% 0;
+}
+.gallery2-icon p{
+    font-size:16px;
+    margin-top:4px;
 }
 
 
@@ -276,7 +282,7 @@ a:hover{
     display: flex;
     width: 100%;
     background-color: #f8f9fb;
-    padding: 5% 0 5% 0%;
+    padding: 4% 0 4% 0%;
     gap:10px;
     flex-wrap:wrap;
     align-items: center;
@@ -289,6 +295,9 @@ a:hover{
 .gallery5 img {
     width: 100%;
     padding: 6% 0 6% 0;
+}
+.gallery5 div iframe{
+    width:100%;
 }
 
 .item-gallery5 {
@@ -303,6 +312,9 @@ a:hover{
 .item-gallery5 p{
     font-size: 15px;
     color: #846f61;
+}
+.item-gallery5 ul li{
+    display:flex;
 }
 .contact-info-p{
     padding-left:5%;
@@ -343,7 +355,7 @@ a:hover{
     list-style-type: none;
     padding: 0;
 }
-.gallery6 div ul li {
+.gallery6-border ul li {
     color: #9f9e9c;
     padding: 20px 0 20px 20px;
     border-bottom: 2px solid #9f9e9c; /* Underline style */
@@ -354,6 +366,17 @@ a:hover{
 .g6p2{
     text-align:center;
 }
+.gallery6-icon{
+    gap:10px;
+    border-width: 0px;
+    display:flex;
+    color:#9f9e9c;
+    margin-top:10px;
+    align-items: center;
+}
+.gallery6-icon i{
+    text-align: center;
+}
 
 /*************************** Footer ***************************/ 
 .gallery7{
@@ -362,7 +385,22 @@ a:hover{
     background-color: #34332f;
     text-align: center;
 }
-
+.gallery7 div ul{
+    list-style-type: none;
+    display:Flex;
+    justify-content: center;
+    gap:8px;
+}
+.gallery7 div li{
+    margin-top:2%;
+}
+.gallery7 i:hover{
+    color:rgb(51, 81, 164);
+    transition:0.7s;
+}
+.gmail i:hover{
+    color:rgb(179, 73, 73);
+}
 .gallery7 img {
     width: 25%; 
     padding-bottom: 3%;
