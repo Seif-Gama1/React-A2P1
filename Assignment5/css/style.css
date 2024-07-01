@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: roboto;
+  font-optical-sizing: auto;
+}
+
+:root {
+  --maincolor: #ff305c; /* these variables are global */
+  --seccolor: #e2e2e2;
+  --third-color: white;
+  --forth-color: #555555;
+  --normal-font: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.main-color {
+  color: var(--maincolor);
+}
+.gray-color {
+  color: var(--forth-color);
+}
+.main-font{
+    font-family: var(--normal-font);
+}
+/*************************** Navigation Bar ***************************/
+.navbar {
+  height: 10vh;
+  gap: 10px;
+}
+.navbar-brand:hover{
+    color:var(--maincolor);
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+.nav-link {
+  color: white;
+  font-size: 20px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--maincolor);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--maincolor);
+}
+
+.Amazing-container {
+  height: 100vh;
+  background-image: url("../images/bg.jpg");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/*************************** Hello I'm ***************************/
+.gallery1 {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.gallery1 h1 {
+  font-weight: 500;
+  font-size: calc(1.3rem + 4vw);
+  text-align: center;
+}
+.gallery1 h2 {
+  font-size: 32px;
+  padding-top: 28vh;
+  color: var(--third-color);
+  font-weight: 500;
+}
+.gallery1 p {
+  font-size: 28px;
+  color: var(--third-color);
+}
+
+.gallery1-content {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  background-color: black;
+  opacity: 0.8;
+  z-index: 0;
+}
+.container-animation .text {
+  position: relative;
+  color: var(--maincolor);
+  font-size: 30px;
+}
+.container-animation .text.first-text {
+  color: #fff;
+}
+.text.sec-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
+  border-left: 2px solid #fff;
+  animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+  40%,
+  60% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+
+/***************************  I Hello ***************************/
+
+.item-gallery2p1 img:hover{
+    filter:brightness(60%); 
+    transition: filter 0.5s;
+}
+.item-gallery2p1 img{
+    width:100%;
+    border-radius:12px;
+}
+.item-gallery2p2{
+    display:none;   
+    width:27.5%;
+    position:absolute;
+    top:106.5vh;
+    border-radius:15px;
+    margin-left:2.4vw;
+    border: 9px solid #000;
+}
+.item-gallery2p2 img{
+    width:100%;
+    border-radius:15px;
+    border-width: 0px;
+}
+.gallery2p1{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #7e737f;
+    border-bottom:1.5px dashed black;
+}
+.buttons{
+    background-color:var(--maincolor);
+    color:var(--third-color);
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    margin:5px 5px 0 0;
+}
+.buttons:hover{
+    color: var(--maincolor);
+    background-color: var(--third-color);
+    border: 1px solid var(--maincolor);
+}
+
+
+/*************************** Our Services ***************************/
+.gallery3{
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+    background-color: var(--seccolor);
+    padding: 4% 0 4% 0;
+}
+.container3{
+    width:100%;
+    text-align: center;
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: space-around;
+}
+.item-gallery3 {
+    width:100%;
+    text-align: center;
+    padding:2% 0 3% 0;
+}
+
+.item-gallery3:hover {
+    background-color: white;
+    color:var(--maincolor);
+}
+.item-gallery3 i{
+    color:var(--forth-color);
+    margin-bottom:3%;
+}
+.item-gallery3 p{
+    width:90%;
+    margin:0 auto;
+    color:#836f79;
+}
+.item-gallery3 h2{
+    color:#333333;
+}
+.borders{
+    width:100%;
+}
+.borders h2 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    width:100%
+}
+.borders hr{
+    border-bottom:1px solid var(--maincolor);
+    margin:3px auto;
+}
+.wideborder{
+    width:55%;
+}
+.smallborder{
+    width:27%;
+}
+
+/*************************** Our Portfolio ***************************/
+.gallery4{ 
+    width: 100%;
+    text-align: center;
+    padding: 6% 0 6% 0;
+}
+.gallery4 h2{
+    width:100%;
+    font-weight: 500;
+    font-size: 32px;
+    color:#31302f;
+}
+.gallery4 h4{
+    color:#5a6978;   
+}
+.container4{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:15px;
+}
+.item-gallery4 { 
+    width: 90%;
+}
+.item-gallery4 img{
+    width: 100%;
+    transition: filter 0.5s;
+}
+
+.image-wrapper{
+    position:relative;
+}
+
+.item-gallery4:hover .image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/photo.png);
+    background-size: 12% 15%;
+    background-position: 90% 90%;
+    background-repeat: no-repeat;
+}
+.item-gallery4:hover img {
+    filter: brightness(60%);
+}
+
+/*************************** Contact Information ***************************/
+.gallery5{
+    display: flex;
+    width: 100%;
+    background-color: var(--seccolor);
+    padding: 5% 0 5% 0%;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+}
+.gallery5 div {
+    width: 100%; /* Each div takes 50% of the container */
+}
+.gallery5 div i{
+    color:var(--forth-color);
+}
+.gallery5 img {
+    width: 100%;
+    padding: 6% 0 6% 0;
+}
+
+.gallery5 h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.gallery5 p{
+    font-size: 18px;
+    color: #65666a;
+}
+
+
+
+
+/*************************** Client's Feedback ***************************/
+.parentgallery6{
+    width: 100%;
+    padding: 4% 0% 4% 0%;        /* top, right , bottom,left */
+    margin-bottom:6%;
+}
+.parentgallery6 h2{
+    font-size: 32px;
+    text-align: center;
+}
+.gallery6{
+    width: 75%;
+    padding-bottom:4%;
+    display:flex;
+    flex-wrap:wrap;
+    margin:0 auto;
+    background-color: var(--seccolor);
+}
+.gallery6 div:first-child{
+    width:100%;
+}
+.gallery6 div img{
+    border-radius: 50%; 
+    width:26%;
+    height:100%;
+    position: relative;
+    top:40%;
+    left:50%;
+    transform:translatex(-50%); 
+}
+
+.item-gallery6{
+    width:90%;
+    margin:0 auto;
+    margin-top:10%;
+}
+.item-gallery6 p{
+    color:var(--forth-color);
+    font-size:18px;
+}
+.item-gallery6 h3{
+    font-size:24px;
+    line-height:2;
+}
+
+
+
+/*************************** Our blog ***************************/ 
+.gallery8{
+    /* margin-top:4%; */
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content: center;
+    background-color: var(--seccolor);
+    padding: 4% 0 4% 0;
+}
+.gallery8 h2{
+    width:100%;
+    font-size: 32px;
+    text-align:center;
+}
+.item-gallery8{
+    width:90%;
+    background-color: var(--third-color);
+    padding-bottom:4%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.item-gallery8 iframe{
+    width:100%;
+}
+.item-gallery8 img{
+    width:100%;
+}
+.item-gallery8 p{
+    width:90%;
+    font-size:20px;
+    margin:0 auto;
+    margin-top:4%;
+    color:#806355;
+}
+.item-gallery8 h3{
+    width:90%;
+    margin:0 auto;
+    color:var(--maincolor);
+    font-size:24px;
+    font-weight:800;
+}
+
+
+/*************************** Contact US ***************************/ 
+.gallery9{
+    padding:4% 0 4% 0;
+    width:100%;
+}
+.gallery9 h2{
+    font-size:32px;
+    text-align:center;
+    width:100%;
+}
+.gallery9-items{
+    width:95%;
+    display:flex;
+    flex-wrap:wrap; 
+    padding-left:5%; 
+    margin:0 auto;
+}
+form{
+    width:100%;
+}
+.gallery9-items input{
+    width:92.5%;
+    margin-top:1%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.gallery9-items textarea{
+    width:92.5%;
+    margin-top: 1%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.gallery9-items button{
+    background-color:var(--maincolor);
+    color:var(--third-color);
+    padding: 12px 16px;
+    margin-top:1%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+}
+.gallery9-items button:hover{
+    color: var(--maincolor);
+    background-color: var(--third-color);
+    border: 1px solid var(--maincolor);
+}
+
+
+/*************************** Footer ***************************/ 
+.gallery7{
+    padding: 3% 0% 4% 0%; /*top, right , bottom,left*/
+    width: 100%;
+    background-color: #212429;
+    text-align: center;
+}
+
+.gallery7 p{
+    font-size: 16px;
+    line-height: 1.5;
+    color:var(--forth-color);
+}
+.gallery7 button{
+    background-color:var(--forth-color);
+    border:none;
+    margin-top:4%;
+    color: var(--third-color);
+    opacity: 1;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.gallery7 button:hover{
+    background-color:var(--maincolor);
+    transition:0.7s;
+}
+.gallery7 div ul{
+    margin-bottom:2%;
+    list-style-type: none;
+    display:Flex;
+    justify-content: center;
+    gap:8px;
+}
+.gallery7 div li{
+    margin-top:2%;
+}
+.gallery7 i:hover{
+    color:var(--maincolor);
+}
+
+@media screen and (min-width: 576px) {
+    .item-gallery2p1 img{
+        width:100%;
+        border-radius:12px;
+    }
+    .item-gallery2p2{
+        width:27.5%;
+        position:absolute;
+        top:106.5vh;
+        border-radius:15px;
+        margin-left:2.4vw;
+        border: 9px solid #000;
+    }
+    .item-gallery2p2 img{
+        width:100%;
+        border-radius:15px;
+    } 
+}
+@media screen and (min-width: 1200px) {
+        
+    /*************************** Our Services ***************************/
+    .item-gallery3 {
+        width:23%;
+    }
+    .wideborder{
+        width:20%;
+    }
+    .smallborder{
+        width:10%;
+    }
+
+    /*************************** Our portfolio ***************************/
+    .item-gallery4 { 
+        width: 31%;
+    }
+
+    /*************************** Contact Information ***************************/
+    .gallery5{
+        flex-wrap:nowrap;
+    }
+    .gallery5 div {
+        width: 24%; /* Each div takes 50% of the container */
+    }
+
+
+    /*************************** Client's Feedback ***************************/
+    .parentgallery6{
+        margin-bottom:2%;
+    }
+    .gallery6{
+        gap:20px;
+        flex-wrap:nowrap;
+    }
+    .gallery6 div:first-child{
+        width:30%;
+    }
+    .gallery6 div img{
+        width:37%;
+        height:33%;
+        top:18%;
+        left:40%; 
+    }
+
+
+    /*************************** Our blog ***************************/ 
+    .item-gallery8{
+        width:30%;
+    }
+
+
+    /*************************** Contact US ***************************/ 
+    .gallery9-items input{
+        width:45.3%;
+    }
+
+    /*************************** Footer ***************************/ 
+    .gallery7 button{
+        padding: 13px;
+        font-size: 16px;
+        margin-top:0%;
+    }
+}
