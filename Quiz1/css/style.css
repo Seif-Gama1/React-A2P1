@@ -1,0 +1,600 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: var(--normal-font);
+    color: var(--fifth-color);
+    font-size: 14px;
+    line-height: 1.75em;
+}
+
+:root {
+  --maincolor: #f25453; /* these variables are global */
+  --seccolor: #e2e2e2;
+  --third-color: white;
+  --gray-color: #999;
+  --fifth-color:#666;
+  --heading-color:#282828;
+  --normal-font: "Open Sans", sans-serif;
+  --custom-font: "Poppins", sans-serif;
+  --fw-600:600;
+  --transition: all 0.5s ease;
+}
+h1, h2, h3, h4, h5, h6, .nav-link {
+    font-family: var(--custom-font);
+}
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+    margin-bottom: .5rem;
+    color: var(--heading-color);
+    font-weight: 500;
+    line-height: 1.2;
+}
+html {
+  scroll-behavior: smooth;
+}
+.main-color {
+  color: var(--maincolor);
+}
+.grayish-color {
+  color: var(--gray-color);
+}
+.main-font{
+    font-family: var(--normal-font);
+}
+.mybackground-color{
+    background-color: var(--fifth-color);
+}
+.mycustom-font{
+    font-family: var(--custom-font);
+}
+.mynormal-font{
+    font-family: var(--normal-font);
+}
+/*************************** Navigation Bar ***************************/
+.navbar {
+  height: 11.5vh;
+  width:100%;
+  position:fixed;
+  border-bottom: 1px solid rgba(77, 94, 125, 0.4);
+}
+.navbar-logo-mycontainer{
+    width:50%;
+    background-image: url(../images/logo-white.png);
+    background-repeat: no-repeat;
+    background-size: 30% 100%;  
+}
+.navbar-collapse {
+  flex-grow: 0;
+}
+.nav-icons{
+    color:white;
+}
+.nav-link {
+  color: white;
+  font-size:13px;
+  padding: 0 15px !important;
+  font-weight: var(--fw-600);
+  letter-spacing: .5px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: var(--maincolor);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--maincolor);
+}
+.navbar-nav .nav-icons:hover {
+    color: var(--maincolor);
+    cursor:pointer;
+}
+.Amazing-container {
+  height: 100vh;
+  width:100%;
+}
+
+
+
+/************************ CHECK ******************************/
+.animation-shape-parent{
+    width:26px;
+    height:43px;
+    bottom:10px;
+    position:absolute;  
+    cursor:pointer;
+    top:88vh;
+    left:50%;
+    transform: translateX(-50%);
+    border:1px solid #fff;
+    border-radius: 50rem;
+    z-index:4;
+    justify-content: center;
+  }
+  .animation-shape-parent:hover{
+    border:1px solid var(--maincolor);
+  }
+  .animation-shape-parent:hover .animation-element{
+    background-color:var(--maincolor);
+  }
+  .animation-element{
+    position:absolute;
+    z-index:4;
+    height:8px;
+    width:8px;
+    top:1px;
+    border-radius: 50%;
+    left:50%;
+    transform: translateX(-50%);   /* 50% OF THIS OBJECT'S SIZE */
+    background-color: white;
+    animation-name:animate-to-bottom;
+    color:blue;
+    animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    animation-timing-function: linear;
+  }
+  
+  @keyframes animate-to-bottom{
+    0% {
+      opacity:0;
+      top:10%;
+    }
+    50%{
+      opacity:1;
+      top:50%;
+    }
+    100%{
+      opacity:0;
+      top:75%;
+    }
+  }
+
+/******************* Background + Buttons **************/
+.mybutton {
+    padding: 16px 17px 15px 12px;
+    position:absolute;
+    display:block;
+    top:43.9vh;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    z-index:3;
+}
+.random{
+    top:42.2vh
+}
+.mybutton:hover{
+    background-color:white;
+    color:var(--maincolor);
+}
+
+#toggle1, #toggle2 {
+    display: none;
+}
+
+.background-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    z-index: 1;
+}
+.mybackground{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+    background-image: url(../images/slideshow-1.jpg);
+    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    z-index:-1;
+
+}
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+}
+
+.text {
+    display: none;
+    color: white;
+    width:50%;
+    font-weight: 700;
+    font-size: 70px;
+    margin:0 auto;
+}
+
+.text1 {
+    display: block;
+}
+
+#toggle1:checked ~ #toggle2:not(:checked) ~ .mybackground {
+    background-image: url(../images/slideshow-2.jpg);
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+#toggle1:checked ~ #toggle2:not(:checked) ~ .text-container .text1 {
+    display: none;
+}
+
+#toggle1:checked ~ #toggle2:not(:checked) ~ .text-container .text2 {
+    display: block;
+}
+
+#toggle2:checked ~ .mybackground {
+    background-image: url(../images/slideshow-3.jpg);
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+#toggle2:checked ~ .text-container .text1 {
+    display: none;
+}
+
+#toggle2:checked ~ .text-container .text2 {
+    display: none;
+}
+
+#toggle2:checked ~ .text-container .text3 {
+    display: block;
+}
+/***************************  About Us ***************************/
+.gallery2big-container{
+    width:100%;
+}
+.gallery2heading{
+    width:70%;
+    margin:0 auto;
+    top:105%;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: transparent;
+    text-align: center;
+}
+.gallery2heading p{
+    font-size:18px;
+}
+.gallery2heading h2{
+    font-weight: 700;
+    font-size:38px;
+}
+.hiddenheader h1{
+    font-weight:700;
+    font-size:74px;
+    color:#f2f2f2;
+    margin-bottom:0;
+    padding-bottom:0;
+}
+
+.myborder{
+    width:3%;
+    border-bottom:1px solid #e0e0e0;
+    color:#000;
+    opacity:1;
+    margin:3px auto;
+    margin-top:3%;
+}
+.gallery2big-container:hover .myborder{
+    transform:scaleX(1.6);
+}
+.item-gallery2p1{
+    font-size:14.5px;
+    font-weight: 300;
+    width:100%;
+    border-radius:12px;
+    color:#666;
+    line-height: 1.5;
+}
+.item-gallery2p2{
+    margin-top: 0%;
+}
+.item-gallery2p2 p{
+    font-weight:600;
+    color:#444;
+    font-family: var(--normal-font);
+    font-size: 14px;
+}
+.mybar-info{
+    display:flex;
+    width:100%;
+    margin-bottom:0px;
+    padding-bottom:0px;
+}
+.progress-bar {
+    background-color: var(--maincolor);
+}
+.about-us-container{
+    margin-top:10%;
+}
+
+/*************************** Our Services ***************************/
+.gallery3big-container{
+    width:100%;
+}
+.gallery3heading{
+    width:70%;
+    margin:0 auto;
+    top:174vh;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: transparent;
+    text-align: center;
+}
+.gallery3heading p{
+    font-size:18px;
+}
+.gallery3heading h2{
+    font-weight: 700;
+    font-size:38px;
+}
+.gallery3big-container:hover .myborder{
+    transform:scaleX(1.6);
+}
+.gallery3-container{
+    margin-top:10%;
+}
+.item-gallery3 img{
+    width:100%;
+}
+.item-gallery3 h5{
+    margin-top:5%;
+    font-size:16px;
+    font-weight:600;
+}
+.item-gallery3:hover h5{
+    color:var(--maincolor);
+}
+.contact-block{
+    margin-top:3%;
+}
+.contact-block h3{
+    font-weight:400;
+}
+.main-btn{
+    padding: 18px 30px;
+    background-color: var(--maincolor);
+    color: #fff;
+    border: none;
+    transition: var(--transition); 
+}
+.main-btn:hover{
+    opacity:0.7;
+    transition:1s;
+}
+/*************************** Services ***************************/
+ .gallery4{ 
+    width: 100%;
+    padding: 5% 0 5% 0;
+    background-color:#f8f9fb ;
+}
+.gallery4heading{
+    width:70%;
+    margin:0 auto;
+    top:309vh;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    background-color: transparent;
+    text-align: center;
+}
+.title:hover .myborder{
+    transform: scaleX(1.6);
+}
+.title .myletter{
+    font-weight:700;
+    font-size:74px;
+    color:#f2f2f2;
+    margin-bottom:0;
+    padding-bottom:0;
+}
+.titlee{
+    width:99.1%;
+    margin:0 auto;
+    text-align: center;
+    font-weight: 700;
+    font-size:38px;
+    color:black;
+    text-align: center;
+    font-family:var(--custom-font);
+}
+.gallery4 .firstaboutus{
+    width:57%;
+    margin: 0 auto;
+    text-align:center;
+    font-size:18px;
+    margin-top:4%;
+    margin-bottom:1rem;
+}
+.service-container:hover h3{
+color:var(--maincolor);
+}
+.services-content h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+    font-weight:600;
+}
+
+/*************************** Client Reviews ***************************/
+
+.gallery5 .firstaboutus{
+    width:57%;
+    margin: 0 auto;
+    text-align:center;
+    font-size:18px;
+    margin-top:4%;
+    margin-bottom:1rem;
+}
+.review {
+    width: 620px;
+    font-family: var(--normal-font);
+    color: var(--color-gray);
+    font-size: 14px;
+    line-height: 1.75em;
+}
+
+
+/*************************** Client's Feedback ***************************/
+.parentgallery6{
+    width: 100%;
+    background-color: #f8f9fb;
+    padding: 4% 0% 0% 0%;        /* top, right , bottom,left */
+    margin-bottom:6%;
+}
+.firstaboutus{
+    width:57%;
+    margin: 0 auto;
+    text-align:center;
+    font-size:18px;
+    margin-top:4%;
+    margin-bottom:1rem;
+}
+.contact-info-container:hover h4{
+    color:var(--maincolor)
+}
+.contact-info h4{
+    font-weight: 600;
+    font-size:18px;
+    transition: var(--transition);
+}
+.contact-h3-styling{
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight:600;
+    line-height:1.2;
+}  
+.secimg{
+    height:10%;
+    width:8%;
+}
+.client-info h3{
+    margin-top:1%;
+    font-size: 16px;
+    font-weight:600;
+}
+.input-styling input{
+    padding: 14px 18px;
+    line-height: 1.5;
+    color: #212529;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+/*************************** Our blog ***************************/ 
+.gallery8{
+    /* margin-top:4%; */
+    width:100%;
+    background-image: url(../images/footer.png);
+    background-color:#222222;
+    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
+    padding: 4% 0 4% 0;
+}
+.gall8-logo{
+    width:5%;
+    margin: 0 auto;
+    margin-bottom:3%;
+}
+.gall8-logo img{
+    width:100%;
+}
+.widget{
+    cursor:pointer;
+}
+.widget h5{
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    line-height:1.2;
+    margin: 10px 0 20px;
+}
+.widget p{
+    font-family: "Poppins", sans-serif;
+    color: #b0b0b0;
+}
+.mylinks a{
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    color: #b0b0b0;
+}
+.bordered-links a{
+    text-decoration: none;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    padding: 2px 10px;
+    font-family: "Poppins", sans-serif;
+    color: #b0b0b0;
+    border: 1px solid #b0b0b0;
+    transition: var(--transition);
+}
+
+.bordered-links a:hover{
+    color:var(--maincolor);
+    border-color: var(--maincolor);
+}
+/*************************** Footer ***************************/ 
+.inner-footer{
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.myfooter a{
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+    transition:500ms ease ;
+}
+.myfooter a:hover{
+    color: var(--maincolor);
+}
+
+@media screen and (min-width: 576px) {
+     
+}
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (min-width: 1200px) {
+        
+    /*************************** Our Services ***************************/
+
+    /*************************** Our portfolio ***************************/
+
+
+    /*************************** Contact Information ***************************/
+
+    /*************************** Client's Feedback ***************************/
+
+    
+    /*************************** Our blog ***************************/ 
+
+    /*************************** Contact US ***************************/ 
+
+    /*************************** Footer ***************************/ 
+}
+
+
+
+
+
+
+  /* background-image: url("../images/bg.jpg");
+  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; */
