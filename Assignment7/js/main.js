@@ -7,37 +7,72 @@ var tabelBody = document.getElementById("tabel-body");
 var updateContainer = document.getElementById("update-form");
 var shadowbg = document.getElementById("shadow-bg");
 
+//global variable
 var updateindex;
+
+
+//get data
+var prodName = document.getElementById("product_name");
+var prodCat = document.getElementById("product_category");
+var prodPrice = document.getElementById("product_price");
+var prodDesc = document.getElementById("prodct_desc");
+
+
+//get update data
+var prodName2 = document.getElementById("product_name2");
+var prodCat2 = document.getElementById("product_category2");
+var prodPrice2 = document.getElementById("product_price2");
+var prodDesc2 = document.getElementById("prodct_desc2");
+
+
+// prodName.value="";  
+// prodCat.value="";
+// prodPrice.value="";  
+// prodDesc.value="";
+
+var createBtn = document.getElementById("create-btn");
+var clearBtn = document.getElementById("clear-btn");
+
+var productForm = document.getElementById("product-form");
+
 
 updateContainer.onsubmit=function(event){
     event.preventDefault();
-    var prodName = document.getElementById("product_name2");
-    var prodCat = document.getElementById("product_category2");
-    var prodPrice = document.getElementById("product_price2");
-    var prodDesc = document.getElementById("prodct_desc2");
-    products[updateindex].name=prodName.value;  
-    products[updateindex].category=prodCat.value;  
-    products[updateindex].price=prodPrice.value;  
-    products[updateindex].description=prodDesc.value;  
-    handleRenderData();
 
-    updateContainer.classList.remove("d-block");
-    updateContainer.classList.add("d-none");
+    if( prodName2.value!="" &&  prodCat2.value!="" &&  prodPrice2.value!="" &&  prodDesc2.value!=""){ 
 
-    shadowbg.classList.add("d-none");
-    shadowbg.classList.remove("d-block");
+        products[updateindex].name=prodName2.value;  
+        products[updateindex].category=prodCat2.value;  
+        products[updateindex].price=prodPrice2.value;  
+        products[updateindex].description=prodDesc2.value;  
+        handleRenderData();
+
+        updateContainer.classList.remove("d-block");
+        updateContainer.classList.add("d-none");
+
+        shadowbg.classList.add("d-none");
+        shadowbg.classList.remove("d-block");
+    }
 }
+
 
 function deleteProduct(index) {
     products.splice(index, 1);
     handleRenderData();
 }
+
+
 function updateForm(index){
     updateContainer.classList.remove("d-none");
     updateContainer.classList.add("d-block");
     shadowbg.classList.remove("d-none");
     shadowbg.classList.add("d-block");
     updateindex=index;
+
+    prodName2.value = products[updateindex].name;
+    prodCat2.value=products[updateindex].category;
+    prodPrice2.value=products[updateindex].price;
+    prodDesc2.value=products[updateindex].description;
 }
 
 function handleRenderData(){
@@ -72,6 +107,10 @@ function handleRenderData(){
             `;
         }
         tabelBody.innerHTML = userDataContent;
+        prodName.value="";  
+        prodCat.value="";
+        prodPrice.value="";  
+        prodDesc.value="";
     }
     else{
         warningMessage.classList.remove("d-none");
@@ -85,29 +124,30 @@ function handleRenderData(){
 
 handleRenderData();
 
-//get data
-var prodName = document.getElementById("product_name");
-var prodCat = document.getElementById("product_category");
-var prodPrice = document.getElementById("product_price");
-var prodDesc = document.getElementById("prodct_desc");
 
-var createBtn = document.getElementById("create-btn");
-var productForm = document.getElementById("product-form");
+clearBtn.onclick = function(){
+    prodName.value="";  
+    prodCat.value="";
+    prodPrice.value="";  
+    prodDesc.value="";
+}
 
 productForm.onsubmit = function(event){
     event.preventDefault();
-    if(!products){
-        products = [];
-    }
-        
-    var product= {
-        name:prodName.value,
-        category: prodCat.value,
-        price: prodPrice.value,
-        description:prodDesc.value
-    };
+    if( prodName.value!="" &&  prodCat.value!="" &&  prodPrice.value!="" &&  prodDesc.value!=""){
+        if(!products){
+            products = [];
+        }
+            
+        var product= {
+            name:prodName.value,
+            category: prodCat.value,
+            price: prodPrice.value,
+            description:prodDesc.value
+        };
 
-    products.push(product);
-    handleRenderData();
+        products.push(product);
+        handleRenderData();
+    }
 };
-//when user clicks button add data to tabl
+//when user clicks button add data to table
