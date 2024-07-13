@@ -26,3 +26,15 @@
     height:200vh;
     background-color:rgba(0, 0, 0, 0.4);
 }
+
+.my-align{
+    /* display:block; */
+    margin-top:4%;
+    position:relative;
+    background-color:white;
+    padding:8px 3px;
+    border: 1px solid lightgray;
+    left:50%;
+    border-radius:6px;
+    transform: translateX(-50%);
+}
