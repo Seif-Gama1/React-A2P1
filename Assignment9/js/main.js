@@ -53,7 +53,7 @@ apiButton3.setAttribute('onclick',
     `getApi('${topRatedMoviesURL}'); 
     document.querySelector("#main-title").innerHTML = 'Top Rated Movies';`);
 apiButton4.setAttribute('onclick', 
-    `getApi('${trendingMoviesURL}'); 
+    `getApi('${trendingMoviesURL}');    
     document.querySelector("#main-title").innerHTML = 'Trending Movies';`);
 apiButton5.setAttribute('onclick', 
     `getApi('${upcomingMoviesURL}'); 
