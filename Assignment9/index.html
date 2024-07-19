@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment9</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    </head>
+
+    <body class="my-dark-color"></body>
+
+        <!--******************** Navbar ************************-->
+        <div class="vertical-component" style="left:0%;" id="vertical-navbar">
+            <h1><span style="color:red">M</span><span style="color:cyan">S</span></h1>
+            
+            <i class="btn fa-solid fa-bars text-black translate make-pointer trigger-menu-icon" id="control-menu"></i>
+            <div class="container">
+                <div class="my-iframe row">
+                    <div class="col-12">
+                        <i class="btn fa-solid fa-globe text-black translate make-pointer"></i>
+                    </div>
+                    <div class="col-12">
+                        <i class="btn fa-solid fa-share-nodes text-black translate make-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--******************** Menu ************************-->
+        <div class="menu shadow-lg col-md-4" style="left:-100%;" id="menu">
+            <ul class="menu-list list-unstyled ">
+                <li>
+                    <a class="btn" id="m-btn-1">Now playing</a>
+                </li>
+                <li>
+                    <a class="btn" id="m-btn-2">Popular</a>
+                </li>
+                <li>
+                    <a class="btn" id="m-btn-3">Top Rated</a>
+                </li>
+                <li>
+                    <a class="btn" id="m-btn-4">Trending</a>
+                </li>
+                <li>
+                    <a class="btn" id="m-btn-5">Upcoming</a>
+                </li>
+                <li>
+                    <a class="btn" href="#contact-us-section">Contact Us</a>
+                </li>
+            </ul>
+            <div class="menu-ending">
+                <div class="menu-icons" style="margin-top:100%; padding-top:100%;">
+                    <i class="btn fa-solid fa-facebook-f main-color translate make-pointer"></i>
+                    <i class="btn fa-solid fa-twitter main-color translate make-pointer"></i>
+                    <i class="btn fa-solid fa-globe main-color translate make-pointer"></i>
+                </div>
+                
+                <p class="main-color" style="font-size:12px; text-align:left; margin-left:10%;">Copyright A® 2022 All Rights Reserved.</p>
+            </div>
+
+        </div>
+
+
+        <!--******************** Searchbar ************************-->        
+        <div class="Searchbar-container">
+            <h1 style="color:white"><span style="color:red">M</span>ovie<span style="color:cyan">N</span>ews</h1>
+        
+            <input type="text" rows="1" cols="50" placeholder="Get movies by word..." id="search-input">
+            
+        </div>
+        <br><br>
+        <br>
+        <hr>
+        
+        
+        <!--******************** Movies header + content ************************-->
+        <h1 class="sec-color" id="main-title">Now Playing</h1>
+        <div class="container py-0 me-4">
+            <div class="row g-4 " id="movie-container">
+                
+            </div>
+        </div>
+        
+        <!--******************** Contact Us ************************-->
+        
+        <!-- <hr> -->
+        <div class="contact-us mt-5" id="contact-us-section">    
+            <h1>Contact Us</h1>
+            <form>
+                <input type="text" placeholder="Enter your name">
+                <input type="text" placeholder="Enter your email">
+                <input type="tel" placeholder="Enter your phone">
+                <input type="number" placeholder="Enter your age">
+                <input type="password" placeholder="Enter your password">
+                <input type="password" placeholder="validate your password">
+                <button>Submit</button>
+            </form>
+        </div>
+
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
