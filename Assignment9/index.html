@@ -79,7 +79,7 @@
         
         
         <!--******************** Movies header + content ************************-->
-        <h1 class="sec-color ms-5 mb-4" id="main-title">Now Playing</h1>
+        <h1 class="sec-color headers mb-4" id="main-title">Now Playing</h1>
         <div class="container py-0 me-4">
             <div class="row g-4 " id="movie-container">
                 
@@ -89,7 +89,7 @@
         <!--******************** Contact Us ************************-->
         
         <!-- <hr> -->
-        <div class="contact-us mt-5" id="contact-us-section">    
+        <!-- <div class="contact-us mt-5" id="contact-us-section">    
             <h1>Contact Us</h1>
             <form>
                 <input type="text" placeholder="Enter your name">
@@ -100,8 +100,38 @@
                 <input type="password" placeholder="validate your password">
                 <button>Submit</button>
             </form>
+        </div> -->
+        <div class="contact-us mt-5">
+            <h1 class="ms-5">Contact Us</h1>
+            <div class="mb-3 mx-auto" id="nametxt">
+                <input type="text" class="form-control" id="name-box" placeholder="Enter your name">
+                <span class="ss" id="name-error"></span>
+            </div>
+            <div class="mb-3 mx-auto" id="emailtxt">
+                <input type="text" class="form-control" id="email-box" placeholder="Enter your email">
+                <span class="ss" id="email-error"></span>
+            </div>
+            <div class="mb-3 mx-auto" id="phonetxt">
+                <input type="text" class="form-control" id="phone-box" placeholder="Enter your phone">
+                <span class="ss" id="phone-error"></span>
+            </div>
+            <div class="mb-3 mx-auto" id="agetxt">
+                <input type="text" class="form-control" id="age-box" placeholder="Enter your age">
+                <span class="ss" id="age-error"></span>
+            </div>
+            <div class="mb-3 mx-auto" id="passwordtxt">
+                <input type="password" class="form-control" id="password-box" placeholder="Enter your password">
+                <span class="ss" id="password-error"></span>
+            </div>
+            <div class="mb-3 mx-auto" id="validatetxt">
+                <input type="password" class="form-control" id="validate-pass-box" placeholder="validate your password">
+                <span class="ss" id="validate-pass-error"></span>
+            </div>
+            <div class="submittdiv">
+                <button class="submitt" id="submitid">Submit</button>
+            </div>
+            
         </div>
-
 
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/main.js"></script>

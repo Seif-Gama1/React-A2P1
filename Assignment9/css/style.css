@@ -190,6 +190,9 @@ body{
     color:#777;
     height:40px;
 }
+.Searchbar-container:click{
+    background-color: #12111f;
+}
 
 hr{
     height:2px;
@@ -226,9 +229,14 @@ h1{
     display:block;
     position: relative;
     left:10%;
+    cursor:pointer;
     background-color:rgb(196, 48, 72);
     border:none;
     border-radius:6px;
     color:white;
     padding: 8px 16px;
+}
+
+.headers{
+    margin-left:12%;
 }
