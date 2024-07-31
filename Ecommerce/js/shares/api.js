@@ -1,6 +1,6 @@
 const base_url="https://dummyjson.com/";
 
-async function getData(endpoint){
+export async function getData(endpoint){
     try{
         const res = await fetch(`https://dummyjson.com/${endpoint}`);
        
@@ -18,9 +18,9 @@ async function getData(endpoint){
 
 export async function getManyRequests(uiHandlers , requestConfig){
     /* uiHandlers: {
-    startLoading: logic happen during request calling
-    error: method take 'err' handle case error in ui
-    stopLoading: method to be called when request is done (in finally block)
+          startLoading: logic happen during request calling
+          error: method take 'err' handle case error in ui
+          stopLoading: method to be called when request is done (in finally block)
     }
     requestConfig: array of objects {
         endpoint: endpoint to receive data from , 
@@ -30,14 +30,12 @@ export async function getManyRequests(uiHandlers , requestConfig){
     startLoading();
     try{
         const mappedRequests = requestConfig.map((item,index) => getData(item.endpoint));    
-        // console.log(mappedRequests);
+        
         const results = await Promise.all(mappedRequests);
-        // console.log(results);
 
         results.forEach((item,index)=>{      
             if(item instanceof Error){   
-                throw new Error("Something went wrong");
-                // throw item;
+              throw new Error("Something went wrong");
             }
             //in case of not of type Error
             requestConfig[index].success(item);
@@ -47,6 +45,7 @@ export async function getManyRequests(uiHandlers , requestConfig){
         error(err);
     }finally{
         stopLoading();
+        // console.log("executing finally block");
     }
 }
 
@@ -63,11 +62,11 @@ export default async function handelRemoteRequest(
       if (res.ok) {
         const data = await res.json();
         success(data);
-        //return data;
       } else {
         throw new Error("something went wrong");
       }
     } catch (e) {
+      console.log(e);
       error(e);
     } finally {
       if (stopLoading && typeof stopLoading === "function") stopLoading();

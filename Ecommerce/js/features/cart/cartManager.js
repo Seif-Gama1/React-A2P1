@@ -1,6 +1,7 @@
-import { cartBtn, cartCloseBtn, cartElement, cartList, itemsCount, itemsElement } from "../../shares/ui/dom-element.js";
+import { cartBtn, cartCloseBtn, cartElement, cartList, descriptionElement, itemsCount, itemsElement } from "../../shares/ui/dom-element.js";
 import cartItem from "./cartItem.js";
 
+var clickedItem_ID, clickedItem_Category;
 
 export default class cartManager{
     #cartItems;
@@ -10,6 +11,7 @@ export default class cartManager{
         const localStorageSavedItems = JSON.parse(localStorage.getItem(cartManager.localStorageKey)) || []; 
         //now localStorageSavedItems holds JS object and not array of cartItem
         console.log(localStorageSavedItems);
+        
         this.#cartItems = localStorageSavedItems.map((item) => 
             cartItem.formToCartItemInstance(item)
         );
@@ -18,6 +20,10 @@ export default class cartManager{
         this.#handleRender();
         this.#addProductToCart();
         this.#updateCartItem();
+    }
+
+    getCartList = function(){
+        return this.#cartItems;
     }
 
     #handleToggleCart = function (){
@@ -44,7 +50,6 @@ export default class cartManager{
                 this.#cartItems.map((item,index) => item.renderElement()).join("")  
             );
             itemsCount.html(`${(this.#cartItems).length}`);
-            console.log(this.#cartItems.length);
         }
     };
 
@@ -54,8 +59,6 @@ export default class cartManager{
             if($(e.target).attr("data-product")){
                 const productData = JSON.parse($(e.target).attr("data-product"));
                 
-
-
                 const existingItem = this.#cartItems.find((item) => item.id==productData.id)
                 
                 if(existingItem){
@@ -69,11 +72,47 @@ export default class cartManager{
                     this.#cartItems.push(myCartItem);
                 }
                 this.#handleRender();
+            }else{
+                if ($(e.target).attr("data-item-test")){
+                    const clickedItem = JSON.parse($(e.target).attr("data-item-test"));
+                    clickedItem_ID = clickedItem.id;
+                    clickedItem_Category = clickedItem.category;
+                    localStorage.setItem("clickedItem_ID", clickedItem_ID);
+                    localStorage.setItem("clickedItem_Category", clickedItem_Category);
+                }
+                else if($(e.target).parent().attr("data-item-test")){
+                    const clickedItem = JSON.parse($(e.target).parent().attr("data-item-test"));
+                    clickedItem_ID = clickedItem.id;
+                    clickedItem_Category = clickedItem.category;
+                    localStorage.setItem("clickedItem_ID", clickedItem_ID);
+                    localStorage.setItem("clickedItem_Category", clickedItem_Category);
+                }
+                window.location.assign("../../../new.html");
             }
-            
         });
 
+    descriptionElement.on("click", (e) =>{
+        if($(e.target).attr("data-product2")){
+            const productData = JSON.parse($(e.target).attr("data-product2"));
+            
+            const existingItem = this.#cartItems.find((item) => item.id==productData.id)
+            
+            if(existingItem){
+                existingItem.increase();
+            }else{
+                const myCartItem = new cartItem(
+                    productData.title,productData.id,
+                    productData.image,productData.price,
+                    productData.stock,
+                );
+                console.log("created new cartItem object")
+                this.#cartItems.push(myCartItem);
+            }
+            this.#handleRender();
+        }
+      });
     }
+
     #updateLocalStorage = function(){
         localStorage.setItem(cartManager.localStorageKey, JSON.stringify(this.#cartItems));
     }
@@ -83,9 +122,7 @@ export default class cartManager{
             const element = $(e.target);
             const action = $(e.target).attr("data-action");
             var updatedCartList;
-            var updatedItem = this.#cartItems.find(
-                    (item) => item.id === Number(element.attr("id"))
-                );
+
             switch(action){
                 case "remove":
                     updatedCartList = this.#cartItems.filter((item) =>
@@ -94,21 +131,28 @@ export default class cartManager{
                     this.#cartItems = updatedCartList;
                     this.#updateLocalStorage();
                     this.#handleRender();
-                    console.log("clicked remove");
                 break;
 
                 case "increase":
-                    updatedItem.increase();
-                    this.#updateLocalStorage();
-                    this.#handleRender();
-                    console.log("clicked increase");
+                    var updatedItem = this.#cartItems.find(
+                        (item) => item.id === Number(element.attr("id"))
+                    );
+                    if(updatedItem){
+                        updatedItem.increase();
+                        this.#updateLocalStorage();
+                        this.#handleRender();
+                    }
                 break;
 
                 case "decrease":
-                    updatedItem.decrease();
-                    this.#updateLocalStorage();
-                    this.#handleRender();
-                    console.log("clicked decrease");
+                    var updatedItem = this.#cartItems.find(
+                        (item) => item.id === Number(element.attr("id"))
+                    );
+                    if(updatedItem){
+                        updatedItem.decrease();
+                        this.#updateLocalStorage();
+                        this.#handleRender();
+                    }
                 break;
 
                 default:
@@ -117,8 +161,3 @@ export default class cartManager{
         });
     }
 }
-
-//Start video 2:43:50
-
-//BOM: broswer object module
-/* Date , Math ,  */

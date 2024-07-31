@@ -1,18 +1,5 @@
-// id: item.id,
-// title: item.title,
-// image: item.images[0],
-// price: item.price,
-// stock: item.stock,
-// quantity:
-
 export default class cartItem{
-    // title;
-    // id;
-    // image;
-    // price;
-    // stock;
-    // quantity;
-    // total;
+
     constructor(title,id,image,price,stock,quantity = 1){
         this.id = id;
         this.title = title;
@@ -34,7 +21,7 @@ export default class cartItem{
 
     renderElement = function () {
         return ` <div class="card card-dark mb-3">
-                    <div class="row align-items-center no-gutters">
+                    <div class=" cart-item row align-items-center no-gutters">
                         <div class="col-md-4">
                             <button class="remove-btn" data-action="remove" id="${this.id}">&times;</button>
                             <img src=${this.image} class="card-img card-img-top" alt="Product Image">
@@ -52,7 +39,7 @@ export default class cartItem{
                                         <button class="btn btn-dark-mode" type="button" data-action="increase" id="${this.id}">+</button>
                                     </div>
                                 </div>
-                                <p class="card-text">Total: $<span id="total">${this.getTotalPrice()}</span></p>
+                                <p class="card-text text-truncate" style="max-width: 110px;">Total: $<span id="total">${this.getTotalPrice()}</span></p>
                             </div>
                         </div>
                     </div>
@@ -62,9 +49,11 @@ export default class cartItem{
         return this.quantity;
     }
     getTotalPrice = function(){
+        if( ( (String)(this.quantity * this.price) ).length > 10){
+            // Logic to truncate extra 99999 in the number 
+        }
         return (this.quantity) * (this.price);
     }
-
     static formToCartItemInstance = function ({
         id,
         title,
@@ -73,6 +62,6 @@ export default class cartItem{
         stock,
         quantity,
       }) {
-        return new cartItem(id, title, image, price, stock, quantity);
+        return new cartItem(title, id, image, price, stock, quantity);
       };
 }
