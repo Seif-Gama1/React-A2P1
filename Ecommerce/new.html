@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>E-commerce</title>
+  </head>
+  <body>
+
+    <nav class="bg-dark py-3 w-100 my-navbar ">
+        <div class="container d-flex justify-content-end align-items-center">
+            
+            <button class="btn btn-primary mt-3" id="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class=" position-absolute rounded-circle bg-danger" id="items-count" style="width:20px; height:20px;">0</span>
+            </button>
+        
+        </div>
+    </nav>
+
+    
+    <main class="container-fluid ps-0 mt-5 pe-0">
+      
+      <div id="cart-element">
+          <button id="close-btn">&times;</button>
+          <div class="p-4 h-100" id="cart-list">
+            <!-- hidden side menu cart items are put here -->
+            
+          </div>
+      </div>
+
+      <!-- Loading Section -->
+      <div class="d-flex vh-100 justify-content-center align-items-center" id="loading2">
+          <h2>Loading...</h2>
+      </div>
+
+      <!-- Error Section -->
+      <div id="error2" class="d-none vh-100 justify-content-center align-items-center">
+          <div class="alert alert-danger"></div>
+      </div>
+
+      <!-- Product info + reviews + similar products Container -->
+      <div class="container">
+          <div class="row justify-content-between g-5 mt-3" id="main-container2">
+              
+              <!-- Display images of product on left half & Description on right half -->
+              <div id="carouselExample" class="carousel slide col-6 col-lg-4">
+                  <div class="carousel-inner d-none" id="single-product-image">
+                    <!-- Display images here -->
+                  </div>
+                  <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" id="back-btn">
+                    <span class="carousel-control-prev-icon text-bg-danger" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselExample" data-bs-slide="next" id="next-btn">
+                    <span class="carousel-control-next-icon text-bg-danger" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+                        
+
+              <div class="col-6 col-lg-8" id="description-container">
+                  <!-- Display description on this product -->
+              </div>
+          </div>
+      </div>
+
+      <div class="review-styling ps-3 pb-3 pt-3 mt-5 pe-5" >
+        <h2 class="text-center mt-5">Reviews</h2>
+        <div id="review-container">
+          <!-- Display Reviews on this product -->
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row" id="similar-products">
+
+          
+
+        </div>
+          <!-- Display Other products with same category as my product -->
+      </div>
+        
+    </main>
+    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="js/main2.js"></script>
+
+  </body>
+</html>
+    
